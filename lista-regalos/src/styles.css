@@ -1,0 +1,109 @@
+/* Fon/* Fondo oscuro con imagen de fondo */
+body {
+  background-image: url('/assets/background.jpg'); /* Ruta de la imagen */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-color: #1e1e1e; /* Color de fondo de respaldo */
+  color: #e0e0e0; /* Texto claro */
+  font-family: "Roboto", sans-serif;
+  @apply antialiased;
+}
+body {
+  background-color: #1e1e1e; /* Fondo oscuro */
+  color: #e0e0e0; /* Texto claro */
+  font-family: "Roboto", sans-serif;
+  @apply antialiased;
+}
+
+/* Estilo para el encabezado y la barra de navegación */
+header {
+  background-color: #2c2c2c; /* Encabezado más oscuro */
+  color: #e0e0e0; /* Texto claro en la barra de navegación */
+  @apply shadow-md;
+}
+
+nav ul {
+  @apply flex items-center justify-center gap-8 text-sm;
+}
+
+nav ul li a {
+  @apply font-medium text-gray-300 transition-colors duration-300 hover:text-yellow-500;
+}
+
+/* Estilo para formularios */
+form {
+  @apply flex flex-col items-center gap-4 p-6 mx-auto mt-12 border border-gray-700 rounded-md w-96;
+  background-color: #333333; /* Fondo del formulario */
+  color: #e0e0e0;
+}
+
+input,
+textarea {
+  @apply bg-gray-700 border border-gray-600 rounded-md py-2 px-3 text-sm text-gray-200;
+  &:focus {
+    @apply border-yellow-500 outline-none ring-yellow-400 ring-1;
+  }
+}
+
+/* Botones */
+button,
+.button {
+  @apply bg-yellow-500 text-gray-900 py-2 px-3 font-medium uppercase rounded-md;
+  transition: background-color 0.3s;
+}
+
+button:hover,
+.button:hover {
+  background-color: #e0a500; /* Hover del botón en amarillo más oscuro */
+}
+
+/* Encabezado principal */
+h1 {
+  color: #ffffff;
+  text-shadow: 1px 1px 2px #000000;
+}
+
+/* Contenedor de entrada */
+.input-container {
+  @apply flex flex-col w-full gap-2;
+}
+
+/* Tabla de datos en fondo oscuro */
+table {
+  @apply w-full border-collapse border border-gray-600;
+  background-color: #2c2c2c; /* Fondo uniforme oscuro */
+}
+
+th,
+td {
+  @apply border border-gray-600 px-4 py-2 text-gray-300;
+  background-color: #2c2c2c; /* Fondo oscuro para todas las celdas */
+}
+
+th {
+  background-color: #3a3a3a; /* Encabezado ligeramente más oscuro */
+  color: #e0e0e0; /* Texto claro para el encabezado */
+}
+
+/* Filas de tabla alternas para mejor legibilidad */
+tbody tr:nth-child(even) {
+  background-color: #333333;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #2c2c2c;
+}
+.btn-select {
+  background-color: #3b82f6; /* Color azul */
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.btn-selected {
+  background-color: #ef4444; /* Color rojo */
+  color: white;
+  cursor: not-allowed;
+  opacity: 0.7;
+}

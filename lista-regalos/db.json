@@ -1,0 +1,25 @@
+{
+  "users": [
+    {
+      "id": "0uffhdxvt",
+      "name": "jairo",
+      "email": "jairosn22@gmail.com",
+      "password": "123456",
+      "events": []
+    }
+  ],
+  "events": [
+    {
+      "id": "vc4ar7cfn",
+      "eventType": "cumpleanos",
+      "location": "brown 2160",
+      "date": "2025-06-18",
+      "time": "16:13",
+      "description": "son todos bienvenidos",
+      "code": "J2486WKZ",
+      "userId": "0uffhdxvt"
+    }
+  ],
+  "gifts": [],
+  "guests": []
+}

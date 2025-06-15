@@ -1,0 +1,28 @@
+<header class="p-4 bg-gray-900">
+  <nav>
+    <ul class="flex items-center justify-center gap-8 font-medium text-gray-300">
+      <li *ngIf="!isAuthenticated() && isGuestLoggedIn()">
+        <a (click)="logoutGuest()" class="hover:text-yellow-500">Logout Invitado</a>
+      </li>
+      <li *ngIf="isAuthenticated()">
+        <a (click)="logout()" class="hover:text-yellow-500">Logout Usuario</a>
+      </li>
+      <li *ngIf="!isAuthenticated() && !isGuestLoggedIn()">
+        <a routerLink="/guest" class="hover:text-yellow-500">Ingresar como Invitado</a>
+      </li>
+      <li *ngIf="!isAuthenticated() && !isGuestLoggedIn()">
+        <a routerLink="/register" class="hover:text-yellow-500">Registro</a>
+      </li>
+      <li *ngIf="!isAuthenticated() && !isGuestLoggedIn()">
+        <a routerLink="/login" class="hover:text-yellow-500">Login</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<main class="flex flex-col items-center justify-center p-4">
+  <h1 class="text-4xl font-bold">
+    Bienvenido a la Plataforma de Lista de Regalos
+  </h1>
+  <router-outlet></router-outlet>
+</main>

@@ -1,0 +1,61 @@
+<section class="container mx-auto flex mt-8 max-w-5xl">
+ 
+  <div class="w-1/2 pr-8">
+    <h2 class="mb-6 text-2xl font-bold">Eventos creados</h2>
+    <ul class="flex flex-col gap-4 text-left">
+      <li *ngFor="let event of events" class="border-b border-gray-700 pb-4 mb-4">
+        <span>{{ event.eventType }} - Código: {{ event.code }}</span><br />
+        <button (click)="selectGifts(event.id)" class="bg-yellow-500 text-black px-3 py-1 mt-2 rounded">
+          Elegir Regalos
+        </button>
+      </li>
+    </ul>
+  </div>
+
+  
+  <div class="w-1/2 pl-4">
+    <h2 class="mb-6 text-2xl font-bold text-center">Crear un nuevo evento</h2>
+    <form [formGroup]="eventForm" (ngSubmit)="createEvent()" class="mt-4 p-6 border border-gray-700 rounded-md bg-gray-800 shadow-lg max-w-md mx-auto">
+      <div class="input-container">
+        <label for="tipoEvento">Tipo de Evento:</label>
+        <input formControlName="eventType" id="tipoEvento" type="text" class="w-full p-2 rounded bg-gray-700 text-white" />
+        <div *ngIf="eventForm.get('eventType')?.invalid && eventForm.get('eventType')?.touched" class="text-red-500">
+          Mínimo 3 caracteres.
+        </div>
+      </div>
+
+      <div class="input-container mt-4">
+        <label for="lugar">Lugar:</label>
+        <input formControlName="location" id="lugar" type="text" class="w-full p-2 rounded bg-gray-700 text-white" />
+        <div *ngIf="eventForm.get('location')?.invalid && eventForm.get('location')?.touched" class="text-red-500">
+          Mínimo 3 caracteres.
+        </div>
+      </div>
+
+      <div class="input-container mt-4">
+        <label for="fecha">Fecha:</label>
+        <input formControlName="date" id="fecha" type="date" class="w-full p-2 rounded bg-gray-700 text-white" />
+        <div *ngIf="eventForm.get('date')?.hasError('invalidDate') && eventForm.get('date')?.touched" class="text-red-500">
+          La fecha debe ser hoy o en el futuro.
+        </div>
+      </div>
+
+      <div class="input-container mt-4">
+        <label for="hora">Hora:</label>
+        <input formControlName="time" id="hora" type="time" class="w-full p-2 rounded bg-gray-700 text-white" />
+      </div>
+
+      <div class="input-container mt-4">
+        <label for="descripcion">Descripción:</label>
+        <textarea formControlName="description" id="descripcion" class="w-full p-2 rounded bg-gray-700 text-white"></textarea>
+        <div *ngIf="eventForm.get('description')?.invalid && eventForm.get('description')?.touched" class="text-red-500">
+          Mínimo 10 caracteres.
+        </div>
+      </div>
+      
+      <button type="submit" [disabled]="eventForm.invalid" class="bg-blue-500 text-white mt-4 px-4 py-2 rounded w-full">
+        Crear Evento
+      </button>
+    </form>
+  </div>
+</section>

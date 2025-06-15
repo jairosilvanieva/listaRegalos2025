@@ -1,0 +1,32 @@
+/* Ajustes en el contenedor principal */
+.container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-top: 2rem;
+    max-width: 1200px;
+}
+
+/* Para dividir el espacio entre la lista de eventos y el formulario */
+.w-12 {
+    width: 48%; /* Ajuste para asegurar espacio */
+}
+
+/* Estilo para asegurar que cada evento esté en una línea separada */
+.event-item {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #333;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* Botón de elegir regalos */
+.button-elegir-regalos {
+    background-color: #ffc107; /* Amarillo */
+    color: black;
+    padding: 0.5rem 1rem;
+    margin-top: 0.5rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+}

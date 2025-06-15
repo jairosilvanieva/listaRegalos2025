@@ -1,0 +1,55 @@
+<form [formGroup]="guestForm" (ngSubmit)="ingresarComoInvitado()">
+  <div class="input-container">
+    <label for="codigo">Código del Evento:</label>
+    <input
+      formControlName="eventCode"
+      id="codigo"
+      type="text"
+      required
+    />
+    <div *ngIf="guestForm.get('eventCode')?.invalid && guestForm.get('eventCode')?.touched">
+      <small>El código del evento es requerido.</small>
+    </div>
+  </div>
+
+  <div class="input-container">
+    <label for="nombre">Nombre:</label>
+    <input
+      formControlName="nombreInvitado"
+      id="nombre"
+      type="text"
+      required
+    />
+    <div *ngIf="guestForm.get('nombreInvitado')?.invalid && guestForm.get('nombreInvitado')?.touched">
+      <small>El nombre es requerido.</small>
+    </div>
+  </div>
+
+  <div class="input-container">
+    <label for="apellido">Apellido:</label>
+    <input
+      formControlName="apellidoInvitado"
+      id="apellido"
+      type="text"
+      required
+    />
+    <div *ngIf="guestForm.get('apellidoInvitado')?.invalid && guestForm.get('apellidoInvitado')?.touched">
+      <small>El apellido es requerido.</small>
+    </div>
+  </div>
+
+  <div class="input-container">
+    <label for="dni">DNI:</label>
+    <input
+      formControlName="dniInvitado"
+      id="dni"
+      type="text"
+      required
+    />
+    <div *ngIf="guestForm.get('dniInvitado')?.invalid && guestForm.get('dniInvitado')?.touched">
+      <small>El DNI es requerido.</small>
+    </div>
+  </div>
+
+  <button type="submit" [disabled]="guestForm.invalid">Ingresar</button>
+</form>

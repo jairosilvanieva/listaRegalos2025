@@ -1,0 +1,37 @@
+<table class="table-auto w-full">
+  <thead>
+    <tr>
+      <th class="px-4 py-2">Nombre del Regalo</th>
+      <th class="px-4 py-2">Descripción</th>
+      <th class="px-4 py-2">Estado</th>
+      <th class="px-4 py-2">Seleccionado por</th>
+      <th class="px-4 py-2">Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let gift of gifts">
+      <td class="border px-4 py-2">{{ gift.name }}</td>
+      <td class="border px-4 py-2">{{ gift.description }}</td>
+      <td class="border px-4 py-2">
+        <button
+          [disabled]="gift.isSelected"
+          (click)="selectGift(gift)"
+          class="p-2 font-medium text-white transition-colors duration-200"
+          [ngClass]="gift.isSelected ? 'btn-selected' : 'btn-select'"
+        >
+          {{ gift.isSelected ? "Seleccionado" : "Seleccionar" }}
+        </button>
+      </td>
+      <td class="border px-4 py-2">
+        <span *ngIf="gift.isSelected">
+          {{ gift.selectedBy?.nombre }} {{ gift.selectedBy?.apellido }}
+        </span>
+      </td>
+      <td class="border px-4 py-2">
+        <button *ngIf="gift.permalink" (click)="verProducto(gift.permalink)" class="bg-blue-500 text-white p-2">
+          Ver producto
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
